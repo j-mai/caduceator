@@ -242,7 +242,7 @@ webhookStore:
   bucket: "webhooks-caduceus"
   address: (( grab $ARGUS_HOST || "argus:6600" ))
   pullInterval: "2s"
-  defaultTTL: 120
+  defaultTTL: 10
   auth:
     basic: (( grab $AUTH_HEADER || "Basic dXNlcjpwYXNz" ))
 ########################################
@@ -260,7 +260,7 @@ sender:
   # HTTP client requests to a particular webhook url.  This number is for
   # THIS server only, to determine the total maximum, multiply this value
   # by the number of caducues machines.
-  numWorkersPerSender: 5000
+  numWorkersPerSender: 1
 
   # queueSizePerSender the maximum queue depth (in events) the sender will
   # store before cutting off the webhook because the delivery pipeline has

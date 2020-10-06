@@ -146,12 +146,12 @@ log:
 # vegeta configures how often and how long to keep attacking caduceus
 vegetaConfig:
   # frequency is the number of events that will be sent to Caduceus' notify endpoint every period.
-  frequency: 1000
+  frequency: 10
 
   # period is how often events will be sent to Caduceus
   # if frequency is set to 100 and period is set to 1s, then Caduceator will be sending
   # 100 events per second to Caduceus
-  period: "5s"
+  period: "1s"
 
   # connections is the number of idle open connections per target host
   connections: 500
@@ -170,7 +170,7 @@ vegetaConfig:
   # sleepTime is used to slow down the ingestion of events from a consumer's perspective
   # it is the duration of time to sleep before sending a status back to Caduceus upon receiving events
   # a longer sleepTime will result in creating a slower consumer.
-  sleepTime: "5s"
+  sleepTime: "9s"
 
   # client timeout in seconds
   clientTimeout: "5s"
@@ -297,7 +297,7 @@ webhook:
   # registrationInterval provides the time to wait between each registration to
   # the webhook.  If this is set to 0, no registration is done.
   # (Optional)
-  registrationInterval: "3m"
+  registrationInterval: "30s"
 
   # timeout provides the length of time the request should wait before timing
   # out
