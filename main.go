@@ -246,6 +246,7 @@ func determineTokenAcquirer(wh Webhook) (acquire.Acquirer, error) {
 
 func main() {
 
+	time.Sleep(5.0 * time.Second)
 	var (
 		f, v                                     = pflag.NewFlagSet(applicationName, pflag.ContinueOnError), viper.New()
 		logger, metricsRegistry, caduceator, err = server.Initialize(applicationName, os.Args, f, v, basculechecks.Metrics, basculemetrics.Metrics, webhookClient.Metrics, Metrics)
